@@ -26,23 +26,23 @@ function formSubmitHandler (evt) {
 formElement.addEventListener('submit', formSubmitHandler);
 
 save.addEventListener('click', function() {
-    popup.classList.add("popup__hidden")
+    popup.classList.add("popup__opened")
 })
 
-function Closepopup() {
-    popup.classList.add("popup__hidden");
+function Openpopup() {
+    popup.classList.remove("popup__opened");
 }
 
-function Openpopup() {
-        popup.classList.remove("popup__hidden");
+function Closepopup() {
+        popup.classList.add("popup__opened");
 };
 
 profileButton.addEventListener("click", function() {
-    Openpopup();
+    Closepopup();
 });
 
 popupCloseButton.addEventListener("click", function() {
-    Closepopup();
+    Openpopup();
 });
 
 profileButton.addEventListener('mouseover', function() {
