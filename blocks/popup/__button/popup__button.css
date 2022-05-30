@@ -1,0 +1,16 @@
+.popup__button {
+    background: #000000;
+    margin-top: 48px;
+    width: 358px;
+    border: none;
+    height: 50px;
+}
+
+@media screen and (max-width: 897px) {
+    .popup__button {
+        height: 46px;
+        width: 238px;
+        border-radius: 2px;
+    }
+}
+
