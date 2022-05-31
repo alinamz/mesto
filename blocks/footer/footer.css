@@ -3,7 +3,7 @@
     padding-bottom: 60px;
     max-width: calc(100% - 400px);
     margin: auto;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 @media screen and (max-width: 897px) {
