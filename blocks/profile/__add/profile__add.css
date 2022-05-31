@@ -8,6 +8,13 @@
     border: 2px solid #fff;
     display: flex;
     background-position: 50%;
+    cursor: pointer;
+    background-size: 22px 22px;
+    border-radius: 2px;
+}
+
+.profile__add:hover {
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 1060px) {

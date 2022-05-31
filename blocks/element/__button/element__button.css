@@ -6,4 +6,16 @@
     width: 22px;
     height: 19px;
     background-size: 100%;
+    cursor: pointer;
+}
+
+.element__button:hover {
+    opacity: 0.5;
+}
+
+.element__button:active {
+    background-image: url(../../../images/Union.svg);
+}
+.element__button:focus {
+    background-image: url(../../../images/Union.svg);
 }
