@@ -32,42 +32,42 @@
                         <li class="element">
                             <img class="element__image" src="./images/karajaevsk.jpg" alt="Карачаевск">
                             <div class="element__name">
-                                <p class="element__text">Карачаевск</p>
+                                <h2 class="element__text">Карачаевск</h2>
                                 <button class="element__button" type="button"></button>
                             </div>
                         </li>
                         <li class="element">
                             <img class="element__image" src="./images/elbrus.jpg" alt="Эльбрус">
                             <div class="element__name">
-                                <p class="element__text">Гора Эльбрус</p>
+                                <h2 class="element__text">Гора Эльбрус</h2>
                                 <button class="element__button" type="button"></button>
                             </div>
                         </li>
                         <li class="element">
                             <img class="element__image" src="./images/donbai.jpg" alt="Домбай">
                             <div class="element__name">
-                                <p class="element__text">Домбай</p>
+                                <h2 class="element__text">Домбай</h2>
                                 <button class="element__button" type="button"></button>
                             </div>
                         </li>
                         <li class="element">
                             <img class="element__image" src="./images/karajaevsk.jpg" alt="Карачаевск">
                             <div class="element__name">
-                                <p class="element__text">Гора Эльбрус</p>
+                                <h2 class="element__text">Гора Эльбрус</h2>
                                 <button class="element__button" type="button"></button>
                             </div>
                         </li>
                         <li class="element">
                             <img class="element__image" src="./images/elbrus.jpg" alt="Эльбрус">
                             <div class="element__name">
-                                <p class="element__text">Домбай</p>
+                                <h2 class="element__text">Домбай</h2>
                                 <button class="element__button" type="button"></button>
                             </div>
                         </li>
                         <li class="element">
                             <img class="element__image" src="./images/karajaevsk.jpg" alt="Карачаевск">
                             <div class="element__name">
-                                <p class="element__text">Карачаево-Черкессия</p>
+                                <h2 class="element__text">Карачаево-Черкессия</h2>
                                 <button class="element__button" type="button"></button>
                             </div>
                         </li>
@@ -83,11 +83,14 @@
             <div class="popup">
                 <div class="popup__container">
                     <h3 class="popup__title">Редактировать профиль</h3>
-                    <form name="popupForm" class="popup__form">
-                        <input value="Жан-Ив Кусто" name="name" id="name" class="popup__input popup__input_name" type="text"
-                            size="40" placeholder="Жак-Ив Кусто">
-                        <input value="Исследователь океана" name="job" id="job" class="popup__input popup__input_job" type="text"
-                            size="40" placeholder="Исследователь океана">
+                    <form name="popupForm">
+                        <fieldset class="popup__fieldset">
+                            <input value="Жан-Ив Кусто" name="name" id="name"
+                                class="popup__input popup__input_type_name" type="text" placeholder="Жак-Ив Кусто">
+                            <input value="Исследователь океана" name="job" id="job"
+                                class="popup__input popup__input_type_job" type="text"
+                                placeholder="Исследователь океана">
+                        </fieldset>
                         <button class="popup__button" type="submit">Сохранить</button>
                     </form>
                     <button class="popup__close" type="button"></button>

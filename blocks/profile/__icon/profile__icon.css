@@ -9,5 +9,6 @@
 @media screen and (max-width: 897px) {
     .profile__icon {
         padding: 0;
+        margin: 0;
     }
 }
