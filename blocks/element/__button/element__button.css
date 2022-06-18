@@ -9,13 +9,11 @@
     cursor: pointer;
 }
 
-.element__button:hover {
-    opacity: 0.5;
+.element__button:hover{
+opacity: 0.5;
+}
+   
+.element__buttonfocus {
+    background-image: url(../../../images/Union.svg);
 }
 
-.element__button:active {
-    background-image: url(../../../images/Union.svg);
-}
-.element__button:focus {
-    background-image: url(../../../images/Union.svg);
-}
