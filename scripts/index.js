@@ -101,6 +101,7 @@ function createCard(element) {
   const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
   const pictureImage = cardElement.querySelector('.element__image');
   pictureImage.src = element.link;
+  pictureImage.alt = element.name;
   cardElement.querySelector('.element__text').textContent = element.name;
 
   cardElement.querySelector(".element__button").addEventListener("click", (evt) => {
@@ -113,6 +114,7 @@ function createCard(element) {
 
   pictureImage.addEventListener("click", () => {
     fullImage.src = element.link;
+    fullImage.alt = element.name;
     fullImageName.textContent = element.name;
     openPopup(popupOpenImageBtn);
   });
