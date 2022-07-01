@@ -14,29 +14,26 @@ const toggleButtonState = (inputList, buttonElement, selectors) => {
 };
 
 const showInputError = (formOpenPopup, formInput, errorMessage, selectors) => {
-    const formError = formOpenPopup.querySelector(`.${formInput.id}-error`);
-    formInput.classList.add(selectors.inputErrorClass);
-    formError.textContent = errorMessage;
-    formError.classList.add(selectors.errorClass);
-
-};
-  
-const hideInputError = (formOpenPopup ,formInput, selectors) => {
-  console.log(selectors);
-  console.log(formInput);
-
   const formError = formOpenPopup.querySelector(`.${formInput.id}-error`);
-    formInput.classList.remove(selectors.inputErrorClass);
-    formError.textContent = '';
-    formError.classList.remove(selectors.errorClass);
+  formInput.classList.add(selectors.inputErrorClass);
+  formError.textContent = errorMessage;
+  formError.classList.add(selectors.errorClass);
+
 };
-  
+
+const hideInputError = (formOpenPopup, formInput, selectors) => {
+  const formError = formOpenPopup.querySelector(`.${formInput.id}-error`);
+  formInput.classList.remove(selectors.inputErrorClass);
+  formError.textContent = '';
+  formError.classList.remove(selectors.errorClass);
+};
+
 const isValid = (formOpenPopup, formInput, selectors) => {
-    if (!formInput.validity.valid) {
-      showInputError(formOpenPopup, formInput, formInput.validationMessage, selectors);
-    } else {
-      hideInputError(formOpenPopup ,formInput, selectors);
-    }
+  if (!formInput.validity.valid) {
+    showInputError(formOpenPopup, formInput, formInput.validationMessage, selectors);
+  } else {
+    hideInputError(formOpenPopup, formInput, selectors);
+  }
 };
 
 const setEventListeners = (formOpenPopup, selectors) => {
@@ -49,7 +46,7 @@ const setEventListeners = (formOpenPopup, selectors) => {
       toggleButtonState(inputList, buttonElement, selectors);
     });
   });
-}; 
+};
 
 const enableValidation = (selectors) => {
   const formList = Array.from(document.querySelectorAll(selectors.formSelector));
@@ -68,5 +65,5 @@ enableValidation({
   inactiveButtonClass: 'form__submit_inactive',
   inputErrorClass: 'form__input_type_error',
   errorClass: 'form__input-error_active'
-}); 
+});
 
