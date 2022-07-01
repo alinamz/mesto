@@ -51,13 +51,15 @@
             <div class="popup popup_type_edit-profile">
                 <div class="popup__container popup__container_type_edit-profile">
                     <h3 class="popup__title">Редактировать профиль</h3>
-                    <form name="popupForm">
+                    <form name="popupForm" class="form" novalidate>
                         <fieldset class="popup__fieldset">
-                            <input value="Жан-Ив Кусто" name="name" id="name"
-                                class="popup__input popup__input_type_name" type="text" placeholder="Жак-Ив Кусто">
-                            <input value="Исследователь океана" name="job" id="job"
-                                class="popup__input popup__input_type_job" type="text"
-                                placeholder="Исследователь океана">
+                            <input value="Жан-Ив Кусто" name="name" id="name-input"
+                                class="popup__input popup__input_type_name" type="text" maxlength="40" minlength="2" placeholder="Жак-Ив Кусто" required>
+                                <span class="name-input-error form__input-error"></span> 
+                            <input value="Исследователь океана" name="job" id="job-input"
+                                class="popup__input popup__input_type_job" type="text" maxlength="200" minlength="2"
+                                placeholder="Исследователь океана" required>
+                            <span class="job-input-error form__input-error"></span> 
                         </fieldset>
                         <button class="popup__button" type="submit">Сохранить</button>
                     </form>
@@ -68,12 +70,14 @@
             <div class="popup popup_type_add-place">
                 <div class="popup__container popup__container_type_add-place">
                     <h3 class="popup__title">Новое место</h3>
-                    <form name="popupForm">
+                    <form name="popupForm" class="form" novalidate>
                         <fieldset class="popup__fieldset">
                             <input value="" name="nameImg" id="name-image" class="popup__input popup__input_type_name-image"
-                                type="text" placeholder="Название">
+                                type="text" maxlength="30" minlength="2" placeholder="Название" required>
+                                <span class="name-image-error form__input-error"></span> 
                             <input value="" name="linkImg" id="link-image" class="popup__input popup__input_type_link-image"
-                                type="text" placeholder="Ссылка на картинку">
+                                type="url" placeholder="Ссылка на картинку" required>
+                                <span class="link-image-error form__input-error"></span> 
                         </fieldset>
                         <button class="popup__button" type="submit">Создать</button>
                     </form>
@@ -91,6 +95,7 @@
         </div>
     </div>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
 </body>
 
 </html>

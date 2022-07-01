@@ -44,12 +44,38 @@ const initialCards = [
   }
 ];
 
+
+
 function openPopup(popupElement) {
+  document.addEventListener("keydown", closePopopByKey);
+  popupElement.addEventListener("click", closePopupOverlay);
   popupElement.classList.add("popup_opened");
 }
 
+const closePopupOverlay = (evt) => {
+  if (!evt.target.classList.contains("popup_opened")){
+    return;
+  }
+  else if (evt.target.classList.contains ("popup__container")) {
+    evt.stopPropagation();
+  }
+  const popupOpen = document.querySelector(".popup_opened");
+  closePopup(popupOpen);
+}
+
+const closePopopByKey = (evt) => {
+  const popupOpen = document.querySelector(".popup_opened");
+  if (evt.code === "Escape") {
+    closePopup(popupOpen);
+  }
+};
+
+
+
 function closePopup(popupElement) {
   popupElement.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closePopopByKey);
+  popupElement.removeEventListener("click",closePopupOverlay)
 }
 
 function handleAddCardForm(evt) {
@@ -127,3 +153,5 @@ function renderCard(card) {
 }
 
 initialCards.map(createCard).forEach(renderCard);
+
+

@@ -1,7 +1,6 @@
-.popup__fieldset{
+.popup__fieldset {
     display: flex;
     flex-direction: column;
-    gap: 30px;
     border: none;
     padding: 0;
     margin-left: 36px;
