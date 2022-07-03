@@ -17,6 +17,7 @@ const fullImage = document.querySelector(".popup__full-image");
 const fullImageName = document.querySelector(".popup__title_type_full-image");
 const popupCloseImageBtn = document.querySelector(".popup__close_type_full-image");
 const popupOpenImageBtn = document.querySelector(".popup_type_full-image");
+const popupContainers = document.querySelectorAll(".popup__container")
 const initialCards = [
   {
     name: 'Архыз',
@@ -44,6 +45,15 @@ const initialCards = [
   }
 ];
 
+
+const selectors = {
+  formSelector: '.form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'form__submit_inactive',
+  inputErrorClass: 'form__input_type_error',
+  errorClass: 'form__input-error_active'
+};
 
 
 function openPopup(popupElement) {
@@ -78,15 +88,19 @@ function closePopup(popupElement) {
   popupElement.removeEventListener("click",closePopupOverlay)
 }
 
+
 function handleAddCardForm(evt) {
   evt.preventDefault();
   const element = {
     name: namePicture.value,
     link: picture.value
   };
+
   renderCard(createCard(element));
   closePopup(popupPicture);
   evt.target.reset();
+  const buttonElement = evt.target.querySelector(selectors.submitButtonSelector)
+  disableButton(buttonElement, selectors)
 }
 
 formElementPicture.addEventListener('submit', handleAddCardForm);
@@ -101,6 +115,8 @@ function handleEditProfileForm(evt) {
 profileForm.addEventListener('submit', handleEditProfileForm);
 
 profileButton.addEventListener("click", function () {
+  inputName.value = title.textContent;
+  inputJob.value = pharagraph.textContent;
   openPopup(profilePopup);
 });
 
@@ -154,4 +170,4 @@ function renderCard(card) {
 
 initialCards.map(createCard).forEach(renderCard);
 
-
+enableValidation(selectors)

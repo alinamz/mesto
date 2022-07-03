@@ -4,12 +4,21 @@ const hasInvalidInput = (inputList) => {
     return !inputElement.validity.valid;
   })
 };
+const enableButton = (buttonElement, selectors) => {
+  buttonElement.classList.remove(selectors.inactiveButtonClass);
+  buttonElement.disabled = false;
+}
+
+const disableButton = (buttonElement, selectors) => {
+  buttonElement.classList.add(selectors.inactiveButtonClass);
+  buttonElement.disabled = true;
+}
 
 const toggleButtonState = (inputList, buttonElement, selectors) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(selectors.inactiveButtonClass);
+   disableButton(buttonElement, selectors)
   } else {
-    buttonElement.classList.remove(selectors.inactiveButtonClass);
+    enableButton(buttonElement, selectors)
   }
 };
 
@@ -58,12 +67,5 @@ const enableValidation = (selectors) => {
   });
 };
 
-enableValidation({
-  formSelector: '.form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'form__submit_inactive',
-  inputErrorClass: 'form__input_type_error',
-  errorClass: 'form__input-error_active'
-});
+
 
