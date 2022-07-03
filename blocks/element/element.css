@@ -1,6 +1,7 @@
-.element{
+.element {
     background-color: #fff;
     border-radius: 10px;
-    max-width: 282px;
+    min-width: 282px;
     position: relative;
+    min-height: 361px; 
 }

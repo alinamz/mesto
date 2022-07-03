@@ -48,7 +48,7 @@ const initialCards = [
 
 function openPopup(popupElement) {
   document.addEventListener("keydown", closePopopByKey);
-  popupElement.addEventListener("click", closePopupOverlay);
+  popupElement.addEventListener("mousedown", closePopupOverlay);
   popupElement.classList.add("popup_opened");
 }
 
@@ -64,8 +64,8 @@ const closePopupOverlay = (evt) => {
 }
 
 const closePopopByKey = (evt) => {
-  const popupOpen = document.querySelector(".popup_opened");
   if (evt.code === "Escape") {
+    const popupOpen = document.querySelector(".popup_opened");
     closePopup(popupOpen);
   }
 };
