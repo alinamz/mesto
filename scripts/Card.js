@@ -1,13 +1,14 @@
 class Card {
-    constructor(name, link, handleAddImg) {
+    constructor(name, link, handleAddImg, selectorTemplate) {
         this._link = link;
         this._name = name;
         this._handleAddImg = handleAddImg;
+        this._selectorTemplate = selectorTemplate;
     }
 
     _getTemplate() {
         const cardElement = document
-            .querySelector('#card')
+            .querySelector(this._selectorTemplate)
             .content
             .querySelector('.element')
             .cloneNode(true);
@@ -20,6 +21,7 @@ class Card {
         this._element = this._getTemplate();
         this._setEventListeners();
         this._element.querySelector('.element__image').src = `${this._link}`;
+        this._element.querySelector('.element__image').alt = this._name;
         this._element.querySelector('.element__text').textContent = this._name;
 
         return this._element;
@@ -45,10 +47,6 @@ class Card {
     }
 }
 
-function InitalizeCard(cards) {
-    cards.map(card => card.generateCard()).forEach(cardElem => {
-        document.querySelector('.elements__images').append(cardElem);
-    });
-}
 
-export { Card, InitalizeCard }
+
+export { Card}
