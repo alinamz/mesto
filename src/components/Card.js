@@ -1,9 +1,10 @@
 class Card {
-    constructor(name, link, handleAddImg, selectorTemplate) {
+    constructor(name, link, selectorTemplate, handleCardClick) {
+        console.log(name);
         this._link = link;
         this._name = name;
-        this._handleAddImg = handleAddImg;
         this._selectorTemplate = selectorTemplate;
+        this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
@@ -34,8 +35,8 @@ class Card {
         });
         this._element.querySelector(".element__delete").addEventListener("click", this._deleteCard);
         this._element.querySelector(".element__image").addEventListener("click", () => {
-            this._handleAddImg(this._name, this._link)
-        });
+            this._handleCardClick(this._name, this._link)
+        })
     }
 
     _deleteCard(evt) {
