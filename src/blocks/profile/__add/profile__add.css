@@ -1,6 +1,6 @@
 .profile__add {
     background-color: #000000;
-    background-image: url(../../../images/plus.svg);
+    background-image: url(./../../../images/plus.svg);
     width: 150px;
     height: 50px;
     margin-left: auto;
