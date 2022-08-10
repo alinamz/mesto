@@ -55,14 +55,15 @@ const addInfoProfile = (profileValues) => {
 
 //инициализируем попап редактирования данных профиля
 const popupWithFormProfile = new PopupWithForm(".popup_type_edit-profile", addInfoProfile);
+popupWithFormProfile.setEventListeners();
 
 //открытие попапа редактирования профиля и вставка данных
 const userInfo = new UserInfo(title, pharagraph);
 
+
 //установка прослушивателя на попап редактирования данных профиля
 profileButton.addEventListener("click", function () {
   popupWithFormProfile.open();
-  popupWithFormProfile.setEventListeners();
 });
 
 //вставка новой картинки
