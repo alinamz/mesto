@@ -23,7 +23,7 @@ const formValidAddImage = new FormValidator(formValidSetting, formImage);
 formValidDataProfile.enableValidation();
 formValidAddImage.enableValidation();
 
-
+//установка попапа с картинкой в увеличенном размере 
 const popupWithImg = new PopupWithImage(".popup_type_full-image");
 popupWithImg.setEventListeners();
 
@@ -53,13 +53,13 @@ const addInfoProfile = (profileValues) => {
   popupWithFormProfile.close();
 }
 
-//инициализируем попап изображнния
+//инициализируем попап редактирования данных профиля
 const popupWithFormProfile = new PopupWithForm(".popup_type_edit-profile", addInfoProfile);
 
-//открытие попапа редактированиЯ профиля и вставка данных
+//открытие попапа редактирования профиля и вставка данных
 const userInfo = new UserInfo(title, pharagraph);
 
-//установка прослушивателя на попап формы
+//установка прослушивателя на попап редактирования данных профиля
 profileButton.addEventListener("click", function () {
   popupWithFormProfile.open();
   popupWithFormProfile.setEventListeners();
@@ -73,10 +73,10 @@ const addImg = (imgValues) => {
 
 //инициализируем попап создания нового места
 const popupImgInfo = new PopupWithForm(".popup_type_add-place", addImg);
+popupImgInfo.setEventListeners();
 
 //установка прослушивателя на попап создания нового места
 profileOpenBtn.addEventListener("click", function() {
   popupImgInfo.open();
-  popupImgInfo.setEventListeners();
 })
 
