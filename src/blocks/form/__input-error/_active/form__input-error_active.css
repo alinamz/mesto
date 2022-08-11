@@ -7,5 +7,14 @@
     letter-spacing: 0em;
     text-align: left;
     color: #FF0000;
+    position: absolute;
+    top: 33px;
+    width: 358px;
+}
 
+@media screen and (max-width: 897px) {
+    .form__input-error_active {
+        width: 263px;
+        min-height: 322px;
+    }
 }

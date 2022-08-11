@@ -10,31 +10,23 @@ import UserInfo from "../components/UserInfo.js";
 import { initalizeCard } from "../utils/initialCards.js";
 import { profileOpenBtn, profileButton, title, pharagraph, formImage, formProfile } from "../utils/constans.js";
 
-
-
-
-//форма с валидацией
+// валидация
 const formValidDataProfile = new FormValidator(formValidSetting, formProfile);
 const formValidAddImage = new FormValidator(formValidSetting, formImage);
-
-
-
-//установка валидации
 formValidDataProfile.enableValidation();
 formValidAddImage.enableValidation();
 
-//установка попапа с картинкой в увеличенном размере 
+// установка попапа с картинкой в увеличенном размере 
 const popupWithImg = new PopupWithImage(".popup_type_full-image");
 popupWithImg.setEventListeners();
 
-
-//создание карточки
+// создание карточки
 const createCard = (item) => {
-  const card = new Card(item.name, item.link, "#card", popupWithImg.open.bind(popupWithImg));
+  const card = new Card(item, "#card", popupWithImg.open.bind(popupWithImg));
   return card.generateCard();
 }
 
-//внедрение карточки в разметку 
+// внедрение карточки в разметку 
 const section = new Section(
   {
     items: initalizeCard,
@@ -47,37 +39,34 @@ const section = new Section(
 
 section.renderItems();
 
-//передаем данные пользователя
+// функция передачи данных пользователя
 const addInfoProfile = (profileValues) => {
   userInfo.setUserInfo(profileValues.name, profileValues.job)
   popupWithFormProfile.close();
 }
 
-//инициализируем попап редактирования данных профиля
+// инициализируем попап редактирования данных профиля
 const popupWithFormProfile = new PopupWithForm(".popup_type_edit-profile", addInfoProfile);
 popupWithFormProfile.setEventListeners();
 
-//открытие попапа редактирования профиля и вставка данных
 const userInfo = new UserInfo(title, pharagraph);
 
-
-//установка прослушивателя на попап редактирования данных профиля
+// установка прослушивателя на попап редактирования данных профиля
 profileButton.addEventListener("click", function () {
   popupWithFormProfile.open();
 });
 
-//вставка новой картинки
+// функция вставка новой картинки
 const addImg = (imgValues) => {
   section.addItem(createCard(imgValues));
   popupImgInfo.close(); 
 }
 
-//инициализируем попап создания нового места
+// инициализируем попап создания нового места
 const popupImgInfo = new PopupWithForm(".popup_type_add-place", addImg);
 popupImgInfo.setEventListeners();
 
-//установка прослушивателя на попап создания нового места
+// установка прослушивателя на попап создания нового места
 profileOpenBtn.addEventListener("click", function() {
   popupImgInfo.open();
-})
-
+});

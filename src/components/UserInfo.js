@@ -8,7 +8,7 @@ export default class UserInfo {
        const profileValues = {
         name : this._nameProfile.textContent,
         job : this._jobProfile.textContent,
-       }
+       };
        
        return profileValues;
     }
