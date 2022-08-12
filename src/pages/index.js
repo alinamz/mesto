@@ -50,10 +50,14 @@ const popupWithFormProfile = new PopupWithForm(".popup_type_edit-profile", addIn
 popupWithFormProfile.setEventListeners();
 
 const userInfo = new UserInfo(title, pharagraph);
-
+const inputName = document.querySelector("#name-input");
+const inputJob = document.querySelector("#job-input");
 // установка прослушивателя на попап редактирования данных профиля
 profileButton.addEventListener("click", function () {
   popupWithFormProfile.open();
+  const dataProfile = userInfo.getUserInfo();
+  inputName.setAttribute("value", dataProfile.name);
+  inputJob.setAttribute("value", dataProfile.job)
 });
 
 // функция вставка новой картинки
@@ -68,5 +72,6 @@ popupImgInfo.setEventListeners();
 
 // установка прослушивателя на попап создания нового места
 profileOpenBtn.addEventListener("click", function() {
+  formValidAddImage.disableButton();
   popupImgInfo.open();
 });
