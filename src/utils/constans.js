@@ -5,3 +5,7 @@ export const pharagraph = document.querySelector(".profile__pharagraph");
 
 export const formImage = document.querySelector('form[name=formImage]');
 export const formProfile = document.querySelector("form[name=formProfile]");
+
+
+export const inputName = document.querySelector("#name-input");
+export const inputJob = document.querySelector("#job-input");

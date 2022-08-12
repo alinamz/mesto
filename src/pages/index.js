@@ -8,7 +8,7 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
 import { initalizeCard } from "../utils/initialCards.js";
-import { profileOpenBtn, profileButton, title, pharagraph, formImage, formProfile } from "../utils/constans.js";
+import { profileOpenBtn, profileButton, title, pharagraph, formImage, formProfile, inputName, inputJob } from "../utils/constans.js";
 
 // валидация
 const formValidDataProfile = new FormValidator(formValidSetting, formProfile);
@@ -50,8 +50,7 @@ const popupWithFormProfile = new PopupWithForm(".popup_type_edit-profile", addIn
 popupWithFormProfile.setEventListeners();
 
 const userInfo = new UserInfo(title, pharagraph);
-const inputName = document.querySelector("#name-input");
-const inputJob = document.querySelector("#job-input");
+
 // установка прослушивателя на попап редактирования данных профиля
 profileButton.addEventListener("click", function () {
   popupWithFormProfile.open();
