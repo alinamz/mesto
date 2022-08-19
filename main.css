@@ -15,7 +15,7 @@
 .element{border-radius:10px;min-height:361px;min-width:282px;position:relative}
 .elements__images{display:grid;gap:17px;grid-template-columns:repeat(auto-fit,minmax(276px,1fr));justify-items:center;margin:0;padding:0;width:100%}@media screen and (max-width:897px){.elements__images{gap:20px}}
 .element__button{background-color:#fff;background-image:url(87ed371465c7a6a1cd01.svg);background-repeat:no-repeat;background-size:100%;border:none;cursor:pointer;height:19px;position:absolute;right:20px;top:22px;width:22px}.element__button:hover{opacity:.5}.element__buttonfocus{background-image:url(fe17a515669479b1e649.svg)}
-.element__image{border-radius:10px 10px 0 0;height:282px;min-height:282px;width:282px}.element__image:hover{opacity:.6}
+.element__image{border-radius:10px 10px 0 0;height:282px;min-height:282px;-o-object-fit:cover;object-fit:cover;width:282px}.element__image:hover{opacity:.6}
 .element__name{align-items:center;background-color:#fff;border-radius:0 0 10px 10px;display:flex;flex-direction:row;justify-content:space-between;margin-top:-4px;min-height:79px;padding-left:21px;padding-right:15px;position:relative}
 .element__text{font-size:24px;font-weight:900;letter-spacing:0;line-height:29px;margin:0;max-width:218px;overflow:hidden;padding:0;text-align:left;text-overflow:ellipsis;white-space:nowrap}
 .footer{flex-shrink:0;margin:auto;max-width:calc(100% - 400px);padding-bottom:60px;padding-top:66px}@media screen and (max-width:897px){.footer{max-width:calc(100% - 38px);padding-bottom:36px;padding-top:48px}}
