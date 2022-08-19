@@ -20,7 +20,7 @@ export default class UserInfo {
         this._jobProfile.textContent = job;
     }
 
-    setUserAvatar(avatar) {
-        this._profileUser.src = avatar;
+    setUserAvatar({avatar}) {
+        this._profileUser.src = `${avatar}`;
     }
 }

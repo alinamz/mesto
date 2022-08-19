@@ -181,4 +181,3 @@ api.getInitalCards()
 api.getUserData()
   .then(data => userInfo.setUserInfo(data.name, data.about))
   .catch(err => console.log(err))
-
