@@ -29,7 +29,7 @@ const deleteCard = (cardID, cardElement) => {
 }
 
 //установка попапа подтверждения удаления карточки
-const popupWithConfirm = new PopupWithConfirm(".popup_type_confirmation_delete", { submitHandler: deleteCard } );
+const popupWithConfirm = new PopupWithConfirm(".popup_type_confirmation-delete", { submitHandler: deleteCard } );
 popupWithConfirm.setEventListeners();
 
 function handleDeleteBtn(cardID, cardElement) {
@@ -96,7 +96,7 @@ const setAvatar = (infoValues) => {
 }
 
 // создание попапа добавления аватара
-const popupAddAvatar = new PopupWithForm(".popup_type_update_profile", setAvatar);
+const popupAddAvatar = new PopupWithForm(".popup_type_update-profile", setAvatar);
 popupAddAvatar.setEventListeners();
 
 // слушатель открытия попапа редактирования профиля
