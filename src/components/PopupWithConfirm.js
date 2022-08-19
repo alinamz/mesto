@@ -12,7 +12,6 @@ export default class PopupWithConfirm extends Popup {
         this._formElement.addEventListener('submit', (e) => {
             e.preventDefault();
             this._submitHandler(this._cardID, this._cardDelete);
-            super.close()
           });
     }
 
@@ -20,7 +19,5 @@ export default class PopupWithConfirm extends Popup {
         super.open();
         this._cardID = cardID;
         this._cardDelete = cardElement;
-    }
-
-   
+    }   
 }

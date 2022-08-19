@@ -1,15 +1,17 @@
 class Card {
-    constructor(cardInfo, selectorTemplate, handleCardClick, handleDeleteBtn, handleLikeCard) {
+    constructor(cardInfo, selectorTemplate, handleCardClick, handleDeleteBtn, handleLikeCard, userId) {
         this._link = cardInfo.link;
         this._name = cardInfo.name;
         this._cardID = cardInfo._id;
-        this._canDelete = cardInfo.canDelete == null ? false : cardInfo.canDelete;
         this._selectorTemplate = selectorTemplate;
         this._handleCardClick = handleCardClick;
         this._handleDeleteBtn = handleDeleteBtn;
         this._likes = cardInfo.likes;
         this._handleLikeCard = handleLikeCard;
-        this.canLike = cardInfo.canLike == null ? false : cardInfo.canLike;
+        this._isLiked = this._likes.filter(u => u._id === userId).length === 1;
+        this._ownerId = cardInfo.owner._id;
+        this._userId = userId;
+        this._canDelete = this._ownerId === userId;
     }
 
     _getTemplate() {
@@ -31,14 +33,14 @@ class Card {
         this._elementLikesCount = this._element.querySelector(".element__like-sum");
 
         this._elementImg.src = `${this._link}`;
-        this._elementName.alt = this._name;
+        this._elementImg.alt = this._name;
         this._elementName.textContent = this._name;
         this._elementLikesCount.textContent = this._likes.length;
         
         this._likeElement = this._element.querySelector(".element__button");
-            if (this.canLike) {
-                this.addLike();
-            }
+        if (this._isLiked) {
+           this.addLike();
+        }
         this._deleteElement = this._element.querySelector(".element__delete");
          if (!this._canDelete) {
             this._deleteElement.remove()
@@ -68,12 +70,12 @@ class Card {
 
     addLike() {
         this._likeElement.classList.add("element__button_active");
-        this.canLike = true
+        this._isLiked = true;
     }
 
     removeLike() {
         this._likeElement.classList.remove("element__button_active");
-        this.canLike = false
+        this._isLiked = false;
     }
 
     setLike(likes) {

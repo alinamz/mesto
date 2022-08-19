@@ -5,7 +5,7 @@ export default class Api {
     }
 
     _fetch(partUrl, method = 'GET', body = null) {
-        return fetch(this._baseUrl + partUrl, {
+        return fetch(`${this._baseUrl}${partUrl}`, {
             headers: this._headers,
             method: method,
             body: body
@@ -14,7 +14,6 @@ export default class Api {
                 if (res.ok) return res.json();
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
-            .catch((err) => console.log(err));
     }
 
     getInitalCards() {
@@ -66,8 +65,8 @@ export default class Api {
             "DELETE");
     }
 
-    setProfileAvatar({info}) {
-        const obj = { "avatar" : info }
+    setProfileAvatar({ info }) {
+        const obj = { "avatar": info }
         return this._fetch(
             '/users/me/avatar',
             'PATCH',
