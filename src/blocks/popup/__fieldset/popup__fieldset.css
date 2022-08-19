@@ -3,11 +3,4 @@
     flex-direction: column;
     border: none;
     padding: 0;
-    margin-left: 36px;
-}
-
-@media screen and (max-width: 897px) {
-    .popup__fieldset{
-        margin-left: 22px;
-    }
 }

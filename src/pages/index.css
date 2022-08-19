@@ -42,3 +42,6 @@
 @import url(../blocks/popup/__input/_type/_link-image/popup__input_type_link-image.css);
 @import url(../blocks/popup/__field-container/popup__field-container.css);
 @import url(../blocks/popup/_color/popup_color.css);
+@import url(../blocks/form/form.css);
+@import url(../blocks/profile/__update-avatar/profile____update-avatar.css);
+@import url(../blocks/element/__like-sum/element__like-sum.css);
